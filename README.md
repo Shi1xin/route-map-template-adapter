@@ -126,7 +126,6 @@ gh skill install Shi1xin/route-map-template-adapter skills/claude/route-map-temp
 ```text
 prompts/     # 可复制 prompt
 skills/      # Codex 与 Claude Code skill 包
-adapters/    # 其他 Agent 的使用方式
 examples/    # 最小输入样例
 scripts/     # 安装脚本
 ```
