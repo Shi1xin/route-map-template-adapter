@@ -3,10 +3,10 @@ set -euo pipefail
 
 usage() {
   printf '%s\n' "Usage:"
-  printf '%s\n' "  curl -fsSL https://raw.githubusercontent.com/Shi1xin/route-map-template-adapter/main/scripts/install.sh | bash -s -- --global codex"
-  printf '%s\n' "  curl -fsSL https://raw.githubusercontent.com/Shi1xin/route-map-template-adapter/main/scripts/install.sh | bash -s -- --project /path/to/project codex"
-  printf '%s\n' "  curl -fsSL https://raw.githubusercontent.com/Shi1xin/route-map-template-adapter/main/scripts/install.sh | bash -s -- --global claude"
-  printf '%s\n' "  curl -fsSL https://raw.githubusercontent.com/Shi1xin/route-map-template-adapter/main/scripts/install.sh | bash -s -- --project /path/to/project claude"
+  printf '%s\n' "  tmp=\$(mktemp -d) && git clone --depth 1 https://github.com/Shi1xin/route-map-template-adapter.git \"\$tmp\" && \"\$tmp/scripts/install.sh\" --global codex; rm -rf \"\$tmp\""
+  printf '%s\n' "  tmp=\$(mktemp -d) && git clone --depth 1 https://github.com/Shi1xin/route-map-template-adapter.git \"\$tmp\" && \"\$tmp/scripts/install.sh\" --project /path/to/project codex; rm -rf \"\$tmp\""
+  printf '%s\n' "  tmp=\$(mktemp -d) && git clone --depth 1 https://github.com/Shi1xin/route-map-template-adapter.git \"\$tmp\" && \"\$tmp/scripts/install.sh\" --global claude; rm -rf \"\$tmp\""
+  printf '%s\n' "  tmp=\$(mktemp -d) && git clone --depth 1 https://github.com/Shi1xin/route-map-template-adapter.git \"\$tmp\" && \"\$tmp/scripts/install.sh\" --project /path/to/project claude; rm -rf \"\$tmp\""
 }
 
 REPO_URL="${ROUTE_MAP_TEMPLATE_ADAPTER_REPO:-https://github.com/Shi1xin/route-map-template-adapter.git}"

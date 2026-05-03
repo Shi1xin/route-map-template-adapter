@@ -26,25 +26,25 @@
 Codex 全局安装：
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/Shi1xin/route-map-template-adapter/main/scripts/install.sh | bash -s -- --global codex
+tmp=$(mktemp -d) && git clone --depth 1 https://github.com/Shi1xin/route-map-template-adapter.git "$tmp" && "$tmp/scripts/install.sh" --global codex; rm -rf "$tmp"
 ```
 
 Codex 项目安装：
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/Shi1xin/route-map-template-adapter/main/scripts/install.sh | bash -s -- --project /path/to/project codex
+tmp=$(mktemp -d) && git clone --depth 1 https://github.com/Shi1xin/route-map-template-adapter.git "$tmp" && "$tmp/scripts/install.sh" --project /path/to/project codex; rm -rf "$tmp"
 ```
 
 Claude Code 全局安装：
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/Shi1xin/route-map-template-adapter/main/scripts/install.sh | bash -s -- --global claude
+tmp=$(mktemp -d) && git clone --depth 1 https://github.com/Shi1xin/route-map-template-adapter.git "$tmp" && "$tmp/scripts/install.sh" --global claude; rm -rf "$tmp"
 ```
 
 Claude Code 项目安装：
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/Shi1xin/route-map-template-adapter/main/scripts/install.sh | bash -s -- --project /path/to/project claude
+tmp=$(mktemp -d) && git clone --depth 1 https://github.com/Shi1xin/route-map-template-adapter.git "$tmp" && "$tmp/scripts/install.sh" --project /path/to/project claude; rm -rf "$tmp"
 ```
 
 Gemini CLI、GitHub Copilot CLI、OpenCode 使用 `adapters/` 下的说明，把 prompt 和 references 作为上下文输入。
