@@ -10,7 +10,12 @@ usage() {
 }
 
 REPO_URL="${ROUTE_MAP_TEMPLATE_ADAPTER_REPO:-https://github.com/Shi1xin/route-map-template-adapter.git}"
-ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." 2>/dev/null && pwd || pwd)"
+SCRIPT_PATH="${BASH_SOURCE[0]:-}"
+if [[ -n "$SCRIPT_PATH" ]]; then
+  ROOT="$(cd "$(dirname "$SCRIPT_PATH")/.." 2>/dev/null && pwd || pwd)"
+else
+  ROOT="$(pwd)"
+fi
 TMP_ROOT=""
 
 cleanup() {
