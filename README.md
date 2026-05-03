@@ -83,6 +83,8 @@ OpenCode 项目安装：
 tmp=$(mktemp -d) && git clone --depth 1 https://github.com/Shi1xin/route-map-template-adapter.git "$tmp" && "$tmp/scripts/install.sh" --project /path/to/project opencode; rm -rf "$tmp"
 ```
 
+## GitHub CLI 安装
+
 GitHub CLI 2.90.0+ 可用统一安装命令：
 
 ```bash
