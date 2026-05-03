@@ -33,4 +33,4 @@ gh skill install Shi1xin/route-map-template-adapter skills/claude/route-map-temp
 
 ## Use
 
-OpenCode exposes available skills through the native `skill` tool. Ask it to load `route-map-template-adapter` for project-text plus reference-route-map tasks.
+OpenCode exposes available skills through the native `skill` tool. Ask it to load `route-map-template-adapter` for source-text plus reference-route-map tasks.

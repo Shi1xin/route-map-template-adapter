@@ -2,30 +2,30 @@
 
 ## Reference Route Map Slot Names
 
-Use stable slot names when the reference image resembles a grant technical route map:
+Use stable slot names when the reference image has a three-lane route-map layout:
 
-- `top.left`: research logic
-- `top.center`: research content
-- `top.right`: research methods
-- `left.stage.1-4`: theory, empirical analysis, mechanism path, policy system
+- `top.left`: route logic
+- `top.center`: main content
+- `top.right`: methods or tools
+- `left.stage.1-4`: basis, analysis, mechanism path, output system
 - `right.methods.1-4`: method stack for each stage
 - `center.section.1-4`: content block for each stage
-- `center.main-title`: focal project title or central research object
+- `center.main-title`: focal title or central object
 - `center.mechanism`: drivers, mechanisms, paths, effects
-- `center.policy`: problems, principles, tasks, measures
+- `center.output`: problems, principles, tasks, measures
 
 ## Node Mapping Style
 
 ```markdown
-| Template slot | Project content | Node label | Relation | Confidence |
+| Template slot | Source content | Node label | Relation | Confidence |
 |---|---|---|---|---|
-| center.section.2.title | "数实融合驱动数字产业集群创新发展" | 数实融合驱动数字产业集群创新发展 | central empirical object | high |
-| right.methods.2 | "国际比较和国内典型案例" | 国际比较 / 典型案例 / 企业调研 | supports empirical section | medium |
+| center.section.2.title | "平台能力支撑业务流程升级" | 平台能力支撑业务流程升级 | central analysis object | high |
+| right.methods.2 | "用户访谈和流程数据分析" | 用户访谈 / 流程数据 / 对比分析 | supports analysis section | medium |
 ```
 
 ## Label Rules
 
 - Chinese labels usually fit best at 4-12 characters.
-- Long project terms can become section titles.
+- Long source terms can become section titles.
 - Box labels should use noun phrases or short verb-object phrases.
 - Connector labels should name relation semantics: 支撑、驱动、测度、解释、验证、转化、形成。

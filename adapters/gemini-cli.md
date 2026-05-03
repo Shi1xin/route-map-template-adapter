@@ -33,6 +33,6 @@ gh skill install Shi1xin/route-map-template-adapter skills/claude/route-map-temp
 
 ## Use
 
-After installation, ask Gemini CLI to use `route-map-template-adapter` with a project text file and a reference route-map image.
+After installation, ask Gemini CLI to use `route-map-template-adapter` with a source text file and a reference route-map image.
 
 Second-stage rendering still goes through a draw.io skill or draw.io CLI workflow.

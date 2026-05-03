@@ -1,23 +1,23 @@
 # Route Map Template Adapter
 
-把“项目文本 + 参考结构图”转成技术路线图的节点映射和 draw.io handoff 约束。
+把“源文本 + 参考结构图”转成路线图的节点映射和 draw.io handoff 约束。
 
 ## 输入
 
-- 项目文本：申报书、活页、开题材料、论文大纲或课题说明。
-- 参考结构图：导师选定的技术路线图模板截图。
+- 源文本：说明文档、方案材料、大纲、需求文档或主题资料。
+- 参考结构图：目标版式、节点关系和视觉结构的参考图。
 
 ## 输出
 
 - `Template Parse`：参考图结构解析。
-- `Project Extraction`：项目文本抽取。
-- `Node Mapping`：模板槽位与项目内容映射表。
+- `Source Extraction`：源文本抽取。
+- `Node Mapping`：模板槽位与源文本内容映射表。
 - `draw.io handoff constraints`：给 draw.io skill 或工具链的出图约束。
 - `Manual Adjustment Notes`：人工校正点。
 
 ## 快速使用
 
-把 `prompts/short.md` 的内容发给 Agent，并附上项目文本和参考图。
+把 `prompts/short.md` 的内容发给 Agent，并附上源文本和参考图。
 
 结构确认后，再使用 `prompts/drawio-handoff.md` 生成 `.drawio`。
 

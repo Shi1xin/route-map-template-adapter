@@ -1,4 +1,4 @@
 interface:
   display_name: "Route Map Template Adapter"
-  short_description: "Map project text into a reference route-map template"
-  default_prompt: "Use $route-map-template-adapter to parse this reference diagram and map the project text into technical-route-map nodes."
+  short_description: "Map source text into a reference route-map template"
+  default_prompt: "Use $route-map-template-adapter to parse this reference diagram and map the source text into route-map nodes."

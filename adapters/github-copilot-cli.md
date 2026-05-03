@@ -34,5 +34,5 @@ gh skill install Shi1xin/route-map-template-adapter skills/claude/route-map-temp
 Prompt Copilot CLI with:
 
 ```text
-Use the /route-map-template-adapter skill with this project text and reference route-map image.
+Use the /route-map-template-adapter skill with this source text and reference route-map image.
 ```

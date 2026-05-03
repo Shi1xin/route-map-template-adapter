@@ -1,15 +1,15 @@
 # Prompting Pattern
 
-Use this prompt pattern after parsing the reference diagram and mapping project content.
+Use this prompt pattern after parsing the reference diagram and mapping source content.
 
 ```text
-你将根据“项目文本资料”和“参考技术路线图”生成一张课题技术路线图结构草案。
+你将根据“源文本资料”和“参考结构图”生成一张路线图结构草案。
 
 任务：
 1. 保持参考图的总体结构：{layout_summary}
 2. 使用以下节点映射填充内容：{slot_mapping}
-3. 中央主线体现：理论基础 -> 研究内容 -> 机制分析 -> 对策建议。
-4. 右侧方法栏与中央内容模块一一对应。
+3. 主线体现：基础依据 -> 内容模块 -> 机制或支撑关系 -> 输出建议。
+4. 方法栏或工具栏与相邻内容模块对应。
 5. 每个框内使用短中文标签，优先使用 4-12 个字。
 6. 箭头表达支撑、驱动、测度、检验、转化、形成等关系。
 7. 输出可交给 draw.io 出图工具的结构草案。
@@ -38,8 +38,8 @@ Use this prompt pattern after parsing the reference diagram and mapping project 
 
 ## Manual Adjustment Checklist
 
-- Stage labels match the target project.
+- Stage labels match the target source.
 - Method stacks support the neighboring content section.
 - Main section titles stay readable.
 - Dense subnodes are grouped into fewer boxes.
-- Weak evidence slots are revised after reading the full proposal.
+- Weak evidence slots are revised after reading the full source material.
