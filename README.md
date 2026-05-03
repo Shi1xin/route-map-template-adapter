@@ -47,7 +47,71 @@ Claude Code 项目安装：
 tmp=$(mktemp -d) && git clone --depth 1 https://github.com/Shi1xin/route-map-template-adapter.git "$tmp" && "$tmp/scripts/install.sh" --project /path/to/project claude; rm -rf "$tmp"
 ```
 
-Gemini CLI、GitHub Copilot CLI、OpenCode 使用 `adapters/` 下的说明，把 prompt 和 references 作为上下文输入。
+Gemini CLI 用户级安装：
+
+```bash
+tmp=$(mktemp -d) && git clone --depth 1 https://github.com/Shi1xin/route-map-template-adapter.git "$tmp" && "$tmp/scripts/install.sh" --global gemini; rm -rf "$tmp"
+```
+
+Gemini CLI 工作区安装：
+
+```bash
+tmp=$(mktemp -d) && git clone --depth 1 https://github.com/Shi1xin/route-map-template-adapter.git "$tmp" && "$tmp/scripts/install.sh" --project /path/to/project gemini; rm -rf "$tmp"
+```
+
+GitHub Copilot CLI 用户级安装：
+
+```bash
+tmp=$(mktemp -d) && git clone --depth 1 https://github.com/Shi1xin/route-map-template-adapter.git "$tmp" && "$tmp/scripts/install.sh" --global copilot; rm -rf "$tmp"
+```
+
+GitHub Copilot CLI 项目安装：
+
+```bash
+tmp=$(mktemp -d) && git clone --depth 1 https://github.com/Shi1xin/route-map-template-adapter.git "$tmp" && "$tmp/scripts/install.sh" --project /path/to/project copilot; rm -rf "$tmp"
+```
+
+OpenCode 用户级安装：
+
+```bash
+tmp=$(mktemp -d) && git clone --depth 1 https://github.com/Shi1xin/route-map-template-adapter.git "$tmp" && "$tmp/scripts/install.sh" --global opencode; rm -rf "$tmp"
+```
+
+OpenCode 项目安装：
+
+```bash
+tmp=$(mktemp -d) && git clone --depth 1 https://github.com/Shi1xin/route-map-template-adapter.git "$tmp" && "$tmp/scripts/install.sh" --project /path/to/project opencode; rm -rf "$tmp"
+```
+
+GitHub CLI 2.90.0+ 可用统一安装命令：
+
+```bash
+gh skill install Shi1xin/route-map-template-adapter skills/claude/route-map-template-adapter --agent claude-code --scope user
+```
+
+Codex：
+
+```bash
+gh skill install Shi1xin/route-map-template-adapter skills/claude/route-map-template-adapter --agent codex --scope user
+```
+
+Gemini CLI：
+
+```bash
+gh skill install Shi1xin/route-map-template-adapter skills/claude/route-map-template-adapter --agent gemini-cli --scope user
+```
+
+GitHub Copilot CLI：
+
+```bash
+gh skill install Shi1xin/route-map-template-adapter skills/claude/route-map-template-adapter --agent github-copilot --scope user
+```
+
+OpenCode：
+
+```bash
+gh skill install Shi1xin/route-map-template-adapter skills/claude/route-map-template-adapter --agent opencode --scope user
+```
 
 本地开发安装：
 

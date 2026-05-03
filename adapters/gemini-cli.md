@@ -1,16 +1,38 @@
 # Gemini CLI
 
-Gemini CLI 使用 prompt + references 方式运行。
+Gemini CLI supports Agent Skills.
 
-## 使用方式
+Official discovery locations:
 
-1. 把 `prompts/short.md` 作为主 prompt。
-2. 附上项目文本和参考结构图。
-3. 需要更稳定输出时，把以下文件作为上下文：
-   - `skills/codex/route-map-template-adapter/SKILL.md`
-   - `skills/codex/route-map-template-adapter/references/template-parse.md`
-   - `skills/codex/route-map-template-adapter/references/prompting.md`
+- User skills: `~/.gemini/skills/` or `~/.agents/skills/`
+- Workspace skills: `.gemini/skills/` or `.agents/skills/`
 
-## 第二阶段
+Official terminal utilities include `gemini skills install <url-or-path>`, `gemini skills link <path>`, and `gemini skills uninstall <name>`. This repository keeps the skill under `skills/claude/route-map-template-adapter`, so the checked install path is the project script or GitHub CLI skill installer.
 
-Gemini CLI 输出 Node Mapping 和 handoff constraints 后，把结果交给 draw.io skill 或 draw.io CLI 工作流。
+## Installer script
+
+User scope:
+
+```bash
+tmp=$(mktemp -d) && git clone --depth 1 https://github.com/Shi1xin/route-map-template-adapter.git "$tmp" && "$tmp/scripts/install.sh" --global gemini; rm -rf "$tmp"
+```
+
+Workspace scope:
+
+```bash
+tmp=$(mktemp -d) && git clone --depth 1 https://github.com/Shi1xin/route-map-template-adapter.git "$tmp" && "$tmp/scripts/install.sh" --project /path/to/project gemini; rm -rf "$tmp"
+```
+
+## GitHub CLI skill installer
+
+GitHub CLI 2.90.0+ supports Gemini CLI as a target agent:
+
+```bash
+gh skill install Shi1xin/route-map-template-adapter skills/claude/route-map-template-adapter --agent gemini-cli --scope user
+```
+
+## Use
+
+After installation, ask Gemini CLI to use `route-map-template-adapter` with a project text file and a reference route-map image.
+
+Second-stage rendering still goes through a draw.io skill or draw.io CLI workflow.

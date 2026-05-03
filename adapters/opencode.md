@@ -1,14 +1,36 @@
 # OpenCode
 
-OpenCode 使用项目上下文文件运行。
+OpenCode supports Agent Skills.
 
-## 使用方式
+Official locations:
 
-1. 把 `prompts/short.md` 放入对话。
-2. 附上项目文本和参考结构图。
-3. 需要固定行为时，把 `skills/codex/route-map-template-adapter/SKILL.md` 作为规则上下文。
-4. 需要详细解析时，再加入 `references/template-parse.md` 和 `references/prompting.md`。
+- Global OpenCode skills: `~/.config/opencode/skill/<name>/SKILL.md`
+- Project OpenCode skills: `.opencode/skill/<name>/SKILL.md`
+- Claude-compatible global skills: `~/.claude/skills/<name>/SKILL.md`
+- Claude-compatible project skills: `.claude/skills/<name>/SKILL.md`
 
-## 推荐流程
+## Installer script
 
-先生成结构和 handoff 约束，再调用 draw.io skill 或 draw.io CLI 生成文件。
+User scope:
+
+```bash
+tmp=$(mktemp -d) && git clone --depth 1 https://github.com/Shi1xin/route-map-template-adapter.git "$tmp" && "$tmp/scripts/install.sh" --global opencode; rm -rf "$tmp"
+```
+
+Project scope:
+
+```bash
+tmp=$(mktemp -d) && git clone --depth 1 https://github.com/Shi1xin/route-map-template-adapter.git "$tmp" && "$tmp/scripts/install.sh" --project /path/to/project opencode; rm -rf "$tmp"
+```
+
+## GitHub CLI skill installer
+
+Recent GitHub CLI releases include `gh skill install`:
+
+```bash
+gh skill install Shi1xin/route-map-template-adapter skills/claude/route-map-template-adapter --agent opencode --scope user
+```
+
+## Use
+
+OpenCode exposes available skills through the native `skill` tool. Ask it to load `route-map-template-adapter` for project-text plus reference-route-map tasks.

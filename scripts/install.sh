@@ -7,6 +7,12 @@ usage() {
   printf '%s\n' "  tmp=\$(mktemp -d) && git clone --depth 1 https://github.com/Shi1xin/route-map-template-adapter.git \"\$tmp\" && \"\$tmp/scripts/install.sh\" --project /path/to/project codex; rm -rf \"\$tmp\""
   printf '%s\n' "  tmp=\$(mktemp -d) && git clone --depth 1 https://github.com/Shi1xin/route-map-template-adapter.git \"\$tmp\" && \"\$tmp/scripts/install.sh\" --global claude; rm -rf \"\$tmp\""
   printf '%s\n' "  tmp=\$(mktemp -d) && git clone --depth 1 https://github.com/Shi1xin/route-map-template-adapter.git \"\$tmp\" && \"\$tmp/scripts/install.sh\" --project /path/to/project claude; rm -rf \"\$tmp\""
+  printf '%s\n' "  tmp=\$(mktemp -d) && git clone --depth 1 https://github.com/Shi1xin/route-map-template-adapter.git \"\$tmp\" && \"\$tmp/scripts/install.sh\" --global gemini; rm -rf \"\$tmp\""
+  printf '%s\n' "  tmp=\$(mktemp -d) && git clone --depth 1 https://github.com/Shi1xin/route-map-template-adapter.git \"\$tmp\" && \"\$tmp/scripts/install.sh\" --project /path/to/project gemini; rm -rf \"\$tmp\""
+  printf '%s\n' "  tmp=\$(mktemp -d) && git clone --depth 1 https://github.com/Shi1xin/route-map-template-adapter.git \"\$tmp\" && \"\$tmp/scripts/install.sh\" --global copilot; rm -rf \"\$tmp\""
+  printf '%s\n' "  tmp=\$(mktemp -d) && git clone --depth 1 https://github.com/Shi1xin/route-map-template-adapter.git \"\$tmp\" && \"\$tmp/scripts/install.sh\" --project /path/to/project copilot; rm -rf \"\$tmp\""
+  printf '%s\n' "  tmp=\$(mktemp -d) && git clone --depth 1 https://github.com/Shi1xin/route-map-template-adapter.git \"\$tmp\" && \"\$tmp/scripts/install.sh\" --global opencode; rm -rf \"\$tmp\""
+  printf '%s\n' "  tmp=\$(mktemp -d) && git clone --depth 1 https://github.com/Shi1xin/route-map-template-adapter.git \"\$tmp\" && \"\$tmp/scripts/install.sh\" --project /path/to/project opencode; rm -rf \"\$tmp\""
 }
 
 REPO_URL="${ROUTE_MAP_TEMPLATE_ADAPTER_REPO:-https://github.com/Shi1xin/route-map-template-adapter.git}"
@@ -47,6 +53,15 @@ if [[ "$MODE" == "--global" ]]; then
   elif [[ "$AGENT" == "claude" ]]; then
     DEST="$HOME/.claude/skills"
     SRC="$ROOT/skills/claude/route-map-template-adapter"
+  elif [[ "$AGENT" == "gemini" ]]; then
+    DEST="$HOME/.gemini/skills"
+    SRC="$ROOT/skills/claude/route-map-template-adapter"
+  elif [[ "$AGENT" == "copilot" ]]; then
+    DEST="$HOME/.copilot/skills"
+    SRC="$ROOT/skills/claude/route-map-template-adapter"
+  elif [[ "$AGENT" == "opencode" ]]; then
+    DEST="$HOME/.config/opencode/skill"
+    SRC="$ROOT/skills/claude/route-map-template-adapter"
   else
     usage
     exit 1
@@ -62,6 +77,15 @@ elif [[ "$MODE" == "--project" ]]; then
     SRC="$ROOT/skills/codex/route-map-template-adapter"
   elif [[ "$AGENT" == "claude" ]]; then
     DEST="$PROJECT/.claude/skills"
+    SRC="$ROOT/skills/claude/route-map-template-adapter"
+  elif [[ "$AGENT" == "gemini" ]]; then
+    DEST="$PROJECT/.gemini/skills"
+    SRC="$ROOT/skills/claude/route-map-template-adapter"
+  elif [[ "$AGENT" == "copilot" ]]; then
+    DEST="$PROJECT/.github/skills"
+    SRC="$ROOT/skills/claude/route-map-template-adapter"
+  elif [[ "$AGENT" == "opencode" ]]; then
+    DEST="$PROJECT/.opencode/skill"
     SRC="$ROOT/skills/claude/route-map-template-adapter"
   else
     usage

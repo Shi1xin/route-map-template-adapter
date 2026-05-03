@@ -1,17 +1,38 @@
 # GitHub Copilot CLI
 
-Copilot CLI 适合执行命令和辅助编辑。这个 workflow 中建议把它用于文件整理、安装脚本、draw.io CLI 导出。
+GitHub Copilot CLI supports Agent Skills.
 
-## 使用方式
+Official locations:
 
-1. 用 `prompts/full.md` 在支持长上下文的 Agent 中生成 Node Mapping。
-2. 在 Copilot CLI 中引用输出文件，让它辅助生成或校验 `.drawio`。
-3. draw.io 导出使用本机 CLI：
+- Personal skills: `~/.copilot/skills/` or `~/.agents/skills/`
+- Project skills: `.github/skills/`, `.claude/skills/`, or `.agents/skills/`
+
+## Installer script
+
+User scope:
 
 ```bash
-drawio -x -f png -e -b 10 -o output.drawio.png output.drawio
+tmp=$(mktemp -d) && git clone --depth 1 https://github.com/Shi1xin/route-map-template-adapter.git "$tmp" && "$tmp/scripts/install.sh" --global copilot; rm -rf "$tmp"
 ```
 
-## 边界
+Project scope:
 
-结构理解和节点映射优先交给支持文件与图像上下文的 Agent。Copilot CLI 更适合作为命令执行助手。
+```bash
+tmp=$(mktemp -d) && git clone --depth 1 https://github.com/Shi1xin/route-map-template-adapter.git "$tmp" && "$tmp/scripts/install.sh" --project /path/to/project copilot; rm -rf "$tmp"
+```
+
+## GitHub CLI skill installer
+
+Recent GitHub CLI releases include `gh skill install`:
+
+```bash
+gh skill install Shi1xin/route-map-template-adapter skills/claude/route-map-template-adapter --agent github-copilot --scope user
+```
+
+## Use
+
+Prompt Copilot CLI with:
+
+```text
+Use the /route-map-template-adapter skill with this project text and reference route-map image.
+```
